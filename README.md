@@ -1,3 +1,3 @@
 # aws-ecs-test
 
-test success
+test 
