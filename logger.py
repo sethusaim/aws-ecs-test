@@ -49,39 +49,6 @@ class App_Logger:
 
             raise Exception(error_msg)
 
-    def start_log(self, key, class_name, method_name, db_name, collection_name):
-        """
-        Method Name :   start_log
-        Description :   This method is used for logging the entry or exit of method depending on key value
-
-        Version     :   1.2
-        Revisions   :   moved setup to cloud
-        """
-        start_method_name = self.start_log.__name__
-
-        try:
-            if key == "start":
-                self.log(
-                    db_name=db_name,
-                    collection_name=collection_name,
-                    log_message=f" Entered {method_name} of class {class_name}",
-                )
-
-            elif key == "exit":
-                self.log(
-                    db_name=db_name,
-                    collection_name=collection_name,
-                    log_message=f" Exited {method_name} of class {class_name}",
-                )
-
-            else:
-                pass
-
-        except Exception as e:
-            error_msg = f"Exception occured in Class : {self.class_name}, Method : {start_method_name}, Error : {str(e)}"
-
-            raise Exception(error_msg)
-
     def raise_exception_log(
         self, error, class_name, method_name, db_name, collection_name
     ):
